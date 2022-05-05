@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         lable.isHidden = true
         getImageButton.isEnabled = false
         activityIndicator.isHidden = false
-        // URL
-        guard let url = URL(string: "https://avatars.mds.yandex.net/get-zen_doc/3397137/pub_5fdf524027ce98245abbb9e2_5fdf933cf5a6f429fcf0abcd/scale_1200") else { return }
+        // URL session
+        guard let url = URL(string: "https://kartinkin.net/uploads/posts/2021-07/1627121281_31-kartinkin-com-p-gats-v-brone-berserka-art-art-krasivo-35.jpg") else { return }
         
         let session = URLSession.shared
         
