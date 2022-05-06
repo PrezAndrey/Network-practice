@@ -14,6 +14,9 @@
 		559DD7352823C92C0033389F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7342823C92C0033389F /* Assets.xcassets */; };
 		559DD7382823C92C0033389F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7362823C92C0033389F /* LaunchScreen.storyboard */; };
 		559DD7402823CBD60033389F /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD73F2823CBD60033389F /* ImageViewController.swift */; };
+		559DD7442824F2C20033389F /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7432824F2C20033389F /* ShowViewController.swift */; };
+		559DD74B2824FBB20033389F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD74A2824FBB20033389F /* Course.swift */; };
+		559DD74D28250F850033389F /* WebSiteDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD74C28250F850033389F /* WebSiteDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		559DD7372823C92C0033389F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		559DD7392823C92C0033389F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559DD73F2823CBD60033389F /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		559DD7432824F2C20033389F /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		559DD74A2824FBB20033389F /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		559DD74C28250F850033389F /* WebSiteDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,43 @@
 		559DD72A2823C92A0033389F /* GetPostPractice */ = {
 			isa = PBXGroup;
 			children = (
-				559DD72B2823C92A0033389F /* AppDelegate.swift */,
-				559DD72D2823C92A0033389F /* SceneDelegate.swift */,
-				559DD73F2823CBD60033389F /* ImageViewController.swift */,
-				559DD72F2823C92A0033389F /* ViewController.swift */,
+				559DD7492824FAF30033389F /* Model */,
+				559DD7482824FAED0033389F /* View */,
+				559DD7472824FAD90033389F /* Controller */,
 				559DD7312823C92A0033389F /* Main.storyboard */,
 				559DD7342823C92C0033389F /* Assets.xcassets */,
 				559DD7362823C92C0033389F /* LaunchScreen.storyboard */,
 				559DD7392823C92C0033389F /* Info.plist */,
 			);
 			path = GetPostPractice;
+			sourceTree = "<group>";
+		};
+		559DD7472824FAD90033389F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				559DD7432824F2C20033389F /* ShowViewController.swift */,
+				559DD73F2823CBD60033389F /* ImageViewController.swift */,
+				559DD72F2823C92A0033389F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		559DD7482824FAED0033389F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		559DD7492824FAF30033389F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				559DD72B2823C92A0033389F /* AppDelegate.swift */,
+				559DD72D2823C92A0033389F /* SceneDelegate.swift */,
+				559DD74A2824FBB20033389F /* Course.swift */,
+				559DD74C28250F850033389F /* WebSiteDescription.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559DD7442824F2C20033389F /* ShowViewController.swift in Sources */,
 				559DD7302823C92A0033389F /* ViewController.swift in Sources */,
 				559DD72C2823C92A0033389F /* AppDelegate.swift in Sources */,
 				559DD7402823CBD60033389F /* ImageViewController.swift in Sources */,
+				559DD74B2824FBB20033389F /* Course.swift in Sources */,
+				559DD74D28250F850033389F /* WebSiteDescription.swift in Sources */,
 				559DD72E2823C92A0033389F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
