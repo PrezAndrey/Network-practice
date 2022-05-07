@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5554E2112826D57A008CEC5B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554E2102826D57A008CEC5B /* MainViewController.swift */; };
+		5554E2132826D58F008CEC5B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5554E2122826D58F008CEC5B /* CollectionViewCell.swift */; };
 		A806CF94210B4EA300574064 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806CF93210B4EA300574064 /* ImageViewController.swift */; };
 		A8255C80214103450074F6D0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255C7F214103450074F6D0 /* WebViewController.swift */; };
 		A8255C8421410AFA0074F6D0 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8255C8321410AFA0074F6D0 /* CoursesViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5554E2102826D57A008CEC5B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5554E2122826D58F008CEC5B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A806CF93210B4EA300574064 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		A8255C7F214103450074F6D0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A8255C8321410AFA0074F6D0 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				A83C30202108401A00592AE4 /* AppDelegate.swift */,
 				A83C30222108401A00592AE4 /* ViewController.swift */,
 				A806CF93210B4EA300574064 /* ImageViewController.swift */,
+				5554E2102826D57A008CEC5B /* MainViewController.swift */,
+				5554E2122826D58F008CEC5B /* CollectionViewCell.swift */,
 				A8255C8321410AFA0074F6D0 /* CoursesViewController.swift */,
 				A895579D214278DB00355357 /* Course.swift */,
 				A895579F2142808400355357 /* WebsiteDescription.swift */,
@@ -153,12 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5554E2132826D58F008CEC5B /* CollectionViewCell.swift in Sources */,
 				A83C30232108401A00592AE4 /* ViewController.swift in Sources */,
 				A895579E214278DB00355357 /* Course.swift in Sources */,
 				A89557A02142808500355357 /* WebsiteDescription.swift in Sources */,
 				A806CF94210B4EA300574064 /* ImageViewController.swift in Sources */,
 				A8255C80214103450074F6D0 /* WebViewController.swift in Sources */,
 				A83C30212108401A00592AE4 /* AppDelegate.swift in Sources */,
+				5554E2112826D57A008CEC5B /* MainViewController.swift in Sources */,
 				A8255C8621410DFE0074F6D0 /* TableViewCell.swift in Sources */,
 				A8255C8421410AFA0074F6D0 /* CoursesViewController.swift in Sources */,
 			);
