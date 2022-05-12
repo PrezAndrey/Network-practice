@@ -8,11 +8,24 @@
 
 import UIKit
 
+
+enum Actions: String, CaseIterable {
+    
+    case downloadImage = "Download image"
+    case get = "GET"
+    case post = "POST"
+    case ourCouses = "Our Courses"
+    case uploadImage = "Upload image"
+    
+}
+
 private let reuseIdentifier = "Cell"
+
+private let url = "https://jsonplaceholder.typicode.com/posts"
 
 class MainViewController: UICollectionViewController {
 
-    let actions = ["Download image", "GET", "POST", "Our Courses", "Upload image"]
+    let actions = Actions.allCases
     
    
 
@@ -27,7 +40,7 @@ class MainViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         
-        cell.lable.text = actions[indexPath.row]
+        cell.lable.text = actions[indexPath.row].rawValue
     
         // Configure the cell
     
@@ -40,18 +53,16 @@ class MainViewController: UICollectionViewController {
         let action = actions[indexPath.row]
         
         switch action {
-        case "Download image":
+        case .downloadImage:
             performSegue(withIdentifier: "ShowImage", sender: self)
-        case "GET":
-            print("GET")
-        case "POST":
-            print("POST")
-        case "Our Courses":
+        case .get:
+            NetworkManager.getRequest(url: url)
+        case .post:
+            NetworkManager.postRequest(url: url)
+        case .ourCouses:
             performSegue(withIdentifier: "OurCourses", sender: self)
-        case "Upload image":
+        case .uploadImage:
             print("Upload image")
-        default:
-            break
         }
     }
 
