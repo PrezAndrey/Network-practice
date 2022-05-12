@@ -64,6 +64,8 @@ class MainViewController: UICollectionViewController {
             performSegue(withIdentifier: "OurCourses", sender: self)
         case .uploadImage:
             NetworkManager.uploadImage(url: uploadImage)
+        case .downloadFile:
+            print(action.rawValue)
         }
     }
 
