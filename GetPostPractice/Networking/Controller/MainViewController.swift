@@ -99,13 +99,13 @@ class MainViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
-        
-        cell.lable.text = actions[indexPath.row].rawValue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CollectionViewCell
+        guard let myCell = cell else { return UICollectionViewCell()}
+        myCell.lable.text = actions[indexPath.row].rawValue
     
         // Configure the cell
     
-        return cell
+        return myCell
     }
 
     // MARK: UICollectionViewDelegate

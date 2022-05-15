@@ -62,11 +62,12 @@ class CoursesViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let webViewController = segue.destination as! WebViewController
-        webViewController.selectedCourse = courseName
+        let webViewController = segue.destination as? WebViewController
+        guard let webVC = webViewController else { return }
+        webVC.selectedCourse = courseName
         
         if let url = courseURL {
-            webViewController.courseURL = url
+            webVC.courseURL = url
         }
     }
 }
@@ -81,11 +82,13 @@ extension CoursesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! TableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? TableViewCell {
+            configureCell(cell: cell, for: indexPath)
+            
+            return cell
+        }
         
-        configureCell(cell: cell, for: indexPath)
-        
-        return cell
+        return UITableViewCell()
     }
 }
 
