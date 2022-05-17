@@ -17,6 +17,7 @@ enum Actions: String, CaseIterable {
     case ourCouses = "Our Courses"
     case uploadImage = "Upload image"
     case downloadFile = "Download file"
+    case ourCourcesAlamofire = "Our cources(Alomafire)"
     
 }
 
@@ -127,6 +128,8 @@ class MainViewController: UICollectionViewController {
         case .downloadFile:
             showAlert()
             dataProvider.startDownload()
+        case .ourCourcesAlamofire:
+            print("Alomafire")
             
         }
     }
