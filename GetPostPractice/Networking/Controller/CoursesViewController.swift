@@ -18,12 +18,6 @@ class CoursesViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        fetchData()
-    }
-    
     func fetchData() {
         NetworkManager.fetchData(url: url) { courses in
             self.courses = courses
@@ -33,12 +27,17 @@ class CoursesViewController: UIViewController {
         }
     }
     
+    
+    func fetchDataWithAlamofire() {
+        AlamofireNetworkRequest.sendRequest(url: url)
+    }
+    
     private func configureCell(cell: TableViewCell, for indexPath: IndexPath) {
         
         let course = courses[indexPath.row]
         cell.courseNameLabel.text = course.name
         
-        if let numberOfLessons = course.numberOfLessons{
+        if let numberOfLessons = course.numberOfLessons {
             cell.numberOfLessons.text = "Number of lessons: \(numberOfLessons)"
         }
         
@@ -57,7 +56,6 @@ class CoursesViewController: UIViewController {
         
     }
     
-
 
     // MARK: - Navigation
 

@@ -46,11 +46,7 @@ class MainViewController: UICollectionViewController {
             self.filePath = location.absoluteString
             self.alert.dismiss(animated: false, completion: nil)
             self.postNotification()
-            
-            
         }
-        
-        
     }
 
     
@@ -129,11 +125,24 @@ class MainViewController: UICollectionViewController {
             showAlert()
             dataProvider.startDownload()
         case .ourCourcesAlamofire:
-            print("Alomafire")
+            performSegue(withIdentifier: "OurCourcesWithAlamofire", sender: self)
             
         }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let courceVC = segue.destination as? CoursesViewController
+        
+        switch segue.identifier {
+        case "OurCourses":
+            courceVC?.fetchData()
+        case "OurCourcesWithAlamofire":
+            courceVC?.fetchDataWithAlamofire()
+        default:
+            break
+        }
+    }
 }
 
 
