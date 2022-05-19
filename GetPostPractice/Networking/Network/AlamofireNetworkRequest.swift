@@ -11,7 +11,7 @@ import Alamofire
 
 class AlamofireNetworkRequest {
     
-    static func sendRequest(url: String) {
+    static func sendRequest(url: String, completion: @escaping ([Course]) -> Void) {
         
         guard let url = URL(string: url) else { return }
         
@@ -19,7 +19,11 @@ class AlamofireNetworkRequest {
             
             switch response.result {
             case .success(let value):
-                print(value)
+                
+                var cources = [Course]()
+                cources = Course.getArray(from: value)!
+                completion(cources)
+            
             case .failure(let error):
                 print(error)
             }
