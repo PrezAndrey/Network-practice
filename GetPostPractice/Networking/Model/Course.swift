@@ -50,12 +50,6 @@ struct Course: Decodable {
         
         var cources: [Course] = []
         
-        for jsonObject in jsonArray {
-            if let cource = Course(json: jsonObject) {
-                cources.append(cource)
-            
-            }
-        }
-        return cources
+        return jsonArray.compactMap { Course(json: $0) }
     }
 }
