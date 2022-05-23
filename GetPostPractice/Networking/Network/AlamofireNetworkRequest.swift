@@ -27,19 +27,30 @@ class AlamofireNetworkRequest {
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    static func responseData(url: String) {
+        AF.request(url).responseData { (responseData) in
             
-//            guard let statusCode = response.response?.statusCode else { return }
+            switch responseData.result {
+            case .success(let data):
+                guard let string = String(data: data, encoding: .utf8) else { return }
+                print(string)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    static func response(url: String) {
+        
+        AF.request(url).response { (response) in
             
-//            print("Status code:", statusCode)
-//
-//
-//            if (200..<300).contains(statusCode) {
-//                let value = response.value
-//                print("Value", value ?? nil)
-//            } else {
-//                let error = response.error
-//                print(error ?? "Error")
-//            }
+            guard let data = response.data,
+                  let string = String(data: data, encoding: .utf8) else { return }
+            
+            print(string)
         }
     }
 }

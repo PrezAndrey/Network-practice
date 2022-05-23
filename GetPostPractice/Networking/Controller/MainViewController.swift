@@ -18,12 +18,14 @@ enum Actions: String, CaseIterable {
     case uploadImage = "Upload image"
     case downloadFile = "Download file"
     case ourCourcesAlamofire = "Our cources(Alomafire)"
+    case responseData = "Response Data"
+    case response = "Response"
     
 }
 
 private let reuseIdentifier = "Cell"
-
 private let url = "https://jsonplaceholder.typicode.com/posts"
+private let swiftBookApi = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
 private let uploadImage = "https://api.imgur.com/3/image"
 
 
@@ -126,19 +128,32 @@ class MainViewController: UICollectionViewController {
             dataProvider.startDownload()
         case .ourCourcesAlamofire:
             performSegue(withIdentifier: "OurCourcesWithAlamofire", sender: self)
+        case .responseData:
+            performSegue(withIdentifier: "ResponseData", sender: self)
+            AlamofireNetworkRequest.responseData(url: swiftBookApi)
+        case .response:
+            AlamofireNetworkRequest.response(url: swiftBookApi)
             
         }
     }
     
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let courceVC = segue.destination as? CoursesViewController
+        let imageVC = segue.destination as? ImageViewController
         
         switch segue.identifier {
         case "OurCourses":
             courceVC?.fetchData()
         case "OurCourcesWithAlamofire":
             courceVC?.fetchDataWithAlamofire()
+        case "ShowImage":
+            imageVC?.fetchImage()
+        case "ResponseData":
+            imageVC?.fetchDataWithAlamofire()
         default:
             break
         }
