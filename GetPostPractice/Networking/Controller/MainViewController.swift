@@ -20,6 +20,7 @@ enum Actions: String, CaseIterable {
     case ourCourcesAlamofire = "Our cources(Alomafire)"
     case responseData = "Response Data"
     case response = "Response"
+    case downloadLargeImage = "Download large image"
     
 }
 
@@ -133,6 +134,8 @@ class MainViewController: UICollectionViewController {
             AlamofireNetworkRequest.responseData(url: swiftBookApi)
         case .response:
             AlamofireNetworkRequest.response(url: swiftBookApi)
+        case .downloadLargeImage:
+            performSegue(withIdentifier: "ShowProgress", sender: self)
             
         }
     }
@@ -154,6 +157,8 @@ class MainViewController: UICollectionViewController {
             imageVC?.fetchImage()
         case "ResponseData":
             imageVC?.fetchDataWithAlamofire()
+        case "ShowProgress":
+            imageVC?.downloadImageWithProgress()
         default:
             break
         }
