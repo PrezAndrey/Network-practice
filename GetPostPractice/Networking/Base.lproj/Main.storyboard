@@ -129,6 +129,8 @@
                         <segue destination="Okz-m4-eD1" kind="show" identifier="OurCourcesWithAlamofire" id="19h-tj-TSl"/>
                         <segue destination="eEq-kV-HBK" kind="show" identifier="ResponseData" id="ncv-fi-Pfw"/>
                         <segue destination="eEq-kV-HBK" kind="show" identifier="ShowProgress" id="6Ub-xX-Cm4"/>
+                        <segue destination="Okz-m4-eD1" kind="show" identifier="PostRequest" id="v3l-G4-JjL"/>
+                        <segue destination="Okz-m4-eD1" kind="show" identifier="PutRequest" id="mCG-Nf-Hg8"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPO-Rq-qdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -299,7 +301,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="19h-tj-TSl"/>
+        <segue reference="mCG-Nf-Hg8"/>
         <segue reference="6Ub-xX-Cm4"/>
     </inferredMetricsTieBreakers>
     <resources>

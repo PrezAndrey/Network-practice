@@ -11,10 +11,13 @@ import UIKit
 class CoursesViewController: UIViewController {
     
     private let url = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
+    private let postRequestUrl = "https://jsonplaceholder.typicode.com/posts"
+    private let putRequestUrl = "https://jsonplaceholder.typicode.com/posts/1"
     
     private var courses = [Course]()
     private var courseName: String?
     private var courseURL: String?
+    
 
     @IBOutlet var tableView: UITableView!
     
@@ -31,6 +34,28 @@ class CoursesViewController: UIViewController {
     func fetchDataWithAlamofire() {
         AlamofireNetworkRequest.sendRequest(url: url) { (courses) in
             self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func postRequest() {
+        AlamofireNetworkRequest.postRequest(url: postRequestUrl) { cources in
+            
+            self.courses = cources
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
+    func putRequest() {
+        AlamofireNetworkRequest.putRequest(url: putRequestUrl) { cources in
+            self.courses = cources
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -113,4 +138,3 @@ extension CoursesViewController: UITableViewDelegate {
         performSegue(withIdentifier: "Description", sender: self)
     }
 }
-
