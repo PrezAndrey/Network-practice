@@ -108,8 +108,8 @@ class AlamofireNetworkRequest {
         let userData: [String: Any] = ["name": "Nerwork Request",
                                        "link": "https://swiftbook.ru/contents/our-first-applications/",
                                        "imageUrl": "https://swiftbook.ru/wp-content/uploads/sites/2/2020/03/12-course-copy-16.jpg",
-                                       "numberOfLessons": 18,
-                                       "numberOfTests": 10]
+                                       "numberOfLessons": "18",
+                                       "numberOfTests": "10"]
         
         AF.request(url, method: .post, parameters: userData).responseJSON{ (responseJSON) in
             
