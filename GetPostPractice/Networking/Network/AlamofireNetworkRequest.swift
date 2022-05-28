@@ -169,17 +169,17 @@ class AlamofireNetworkRequest {
     
     static func uploadImage(url: String) {
         
-        guard let url = URL(string: url) else { return }
-        
-        let image = UIImage(named: "naruto")!
-        let data = image.pngData()!
-        
-        let httpHeaders: HTTPHeaders = ["Authorization": "Client-ID 0d60631c824bd17"]
-        
-        AF.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(data, withName: "image")
-        }, to: url, headers: httpHeaders) { (encodingCompletion) in
-            
+//        guard let url = URL(string: url) else { return }
+//
+//        let image = UIImage(named: "naruto")!
+//        let data = image.pngData()!
+//
+//        let httpHeaders: HTTPHeaders = ["Authorization": "Client-ID 0d60631c824bd17"]
+//
+//        AF.upload(multipartFormData: { (multipartFormData) in
+//            multipartFormData.append(data, withName: "image")
+//        }, to: url, headers: httpHeaders) { (encodingCompletion) in
+//
 //            switch encodingCompletion {
 //                case .success(request: let uploadRequest, streamingFromDisk: let streamingFromDisk, streamFileURL: let streamFileURL):
 //                    print(uploadRequest)
@@ -188,7 +188,7 @@ class AlamofireNetworkRequest {
 //                case .failure(let error):
 //                    print(error)
 //            }
-            
-        }
+//
+//        }
     }
 }
